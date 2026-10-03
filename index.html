@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Lokesha Digital Store</title>
-  <meta name="description" content="Lokesha Digital Store — digital ebooks and educational content.">
+  <meta name="description" content="Lokesha Digital Store — digital resources and online products.">
+
   <style>
     * {
       box-sizing: border-box;
@@ -12,123 +14,341 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background: #f7f8fc;
-      color: #171717;
+      color: #111827;
       line-height: 1.6;
     }
 
-    header {
-      background: #111827;
-      color: white;
-      padding: 22px 7%;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: auto;
+      padding: 18px 22px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 21px;
       font-weight: 800;
+      letter-spacing: -0.5px;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
+    .logo span {
+      color: #635bff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
       font-size: 14px;
+      font-weight: 600;
+      color: #4b5563;
+    }
+
+    .nav-links a:hover {
+      color: #635bff;
     }
 
     .hero {
-      padding: 90px 7%;
-      text-align: center;
-      background: white;
+      max-width: 1120px;
+      margin: auto;
+      padding: 95px 22px 80px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 55px;
+      align-items: center;
     }
 
-    .hero h1 {
-      font-size: 46px;
-      margin-bottom: 15px;
+    .badge {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: #eeecff;
+      color: #574fd6;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 72px);
+      line-height: 1.02;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #635bff, #9b5cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero p {
-      max-width: 650px;
-      margin: auto;
-      color: #555;
+      max-width: 600px;
+      color: #6b7280;
       font-size: 18px;
+      margin-bottom: 32px;
     }
 
-    .button {
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 21px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 15px;
       display: inline-block;
-      margin-top: 28px;
-      padding: 14px 25px;
+      transition: .2s;
+    }
+
+    .btn-primary {
       background: #111827;
       color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
     }
 
-    section {
-      padding: 65px 7%;
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #000;
+    }
+
+    .btn-secondary {
+      background: white;
+      border: 1px solid #e5e7eb;
+    }
+
+    .btn-secondary:hover {
+      border-color: #c7c9d1;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #111827, #312e81);
+      min-height: 360px;
+      border-radius: 30px;
+      padding: 30px;
+      color: white;
+      box-shadow: 0 25px 70px rgba(31, 41, 55, .18);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(139, 92, 246, .35);
+      right: -60px;
+      top: -60px;
+      filter: blur(5px);
+    }
+
+    .hero-card-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-label {
+      font-size: 13px;
+      opacity: .7;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .hero-card h2 {
+      font-size: 34px;
+      line-height: 1.15;
+      margin-top: 12px;
+    }
+
+    .card-bottom {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .mini-card {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      padding: 13px;
+      font-size: 12px;
+    }
+
+    .section {
+      max-width: 1120px;
+      margin: auto;
+      padding: 80px 22px;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 35px;
-      font-size: 30px;
+      max-width: 650px;
+      margin: 0 auto 45px;
     }
 
-    .products {
+    .section-title h2 {
+      font-size: 38px;
+      letter-spacing: -1.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #6b7280;
+    }
+
+    .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
-      max-width: 1000px;
-      margin: auto;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
-    .card {
+    .feature {
       background: white;
+      border: 1px solid #e8e9ee;
+      border-radius: 20px;
       padding: 28px;
-      border-radius: 16px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+      transition: .2s;
     }
 
-    .card h3 {
-      margin-bottom: 10px;
+    .feature:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(0,0,0,.06);
     }
 
-    .card p {
-      color: #666;
-      font-size: 15px;
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: #eeecff;
+      color: #635bff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .feature h3 {
+      margin-bottom: 8px;
+      font-size: 19px;
+    }
+
+    .feature p {
+      color: #6b7280;
+      font-size: 14px;
     }
 
     .about {
-      background: white;
+      background: #111827;
+      color: white;
+      border-radius: 30px;
+      padding: 55px;
       text-align: center;
+    }
+
+    .about h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
     }
 
     .about p {
       max-width: 700px;
       margin: auto;
-      color: #555;
+      color: #c7cbd4;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 85px 22px;
+    }
+
+    .cta h2 {
+      font-size: 42px;
+      letter-spacing: -1.5px;
+      margin-bottom: 14px;
+    }
+
+    .cta p {
+      color: #6b7280;
+      margin-bottom: 25px;
     }
 
     footer {
-      background: #111827;
-      color: #ccc;
-      text-align: center;
-      padding: 30px 7%;
-      font-size: 14px;
+      border-top: 1px solid #e5e7eb;
+      background: white;
+      padding: 30px 22px;
     }
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 34px;
+    .footer-inner {
+      max-width: 1120px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #6b7280;
+      font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
       }
 
-      nav {
-        display: none;
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 65px;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        min-height: 300px;
+      }
+
+      .about {
+        padding: 40px 25px;
+      }
+
+      .cta h2 {
+        font-size: 34px;
       }
     }
   </style>
@@ -136,81 +356,152 @@
 
 <body>
 
-<header>
-  <div class="logo">Lokesha Digital Store</div>
-  <nav>
-    <a href="#products">Products</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="logo">Lokesha<span>Digital</span></div>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#resources">Resources</a>
+        <a href="#about">About</a>
+        <a href="#support">Support</a>
+      </div>
+    </div>
   </nav>
-</header>
 
-<section class="hero">
-  <h1>Digital Knowledge. Simple & Accessible.</h1>
-  <p>
-    Welcome to Lokesha Digital Store, a digital marketplace for ebooks,
-    educational resources and downloadable content.
-  </p>
-  <a class="button" href="#products">Explore Products</a>
-</section>
+  <main>
 
-<section id="products">
-  <h2 class="section-title">Our Digital Products</h2>
+    <section class="hero" id="home">
 
-  <div class="products">
+      <div>
+        <div class="badge">DIGITAL STORE</div>
 
-    <div class="card">
-      <h3>Cognitive Toolkit Complete</h3>
+        <h1>
+          Digital resources.<br>
+          <span class="gradient">Made simple.</span>
+        </h1>
+
+        <p>
+          Welcome to Lokesha Digital Store — a simple online destination
+          for digital resources and educational content.
+        </p>
+
+        <div class="buttons">
+          <a href="#resources" class="btn btn-primary">
+            Explore Resources
+          </a>
+
+          <a href="#about" class="btn btn-secondary">
+            Learn More
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+
+        <div class="hero-card-content">
+          <div class="card-label">LOKESHA DIGITAL STORE</div>
+
+          <h2>
+            Learn.<br>
+            Create.<br>
+            Grow.
+          </h2>
+        </div>
+
+        <div class="card-bottom">
+          <div class="mini-card">Digital</div>
+          <div class="mini-card">Educational</div>
+          <div class="mini-card">Online</div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="section" id="resources">
+
+      <div class="section-title">
+        <h2>What we offer</h2>
+        <p>
+          Digital resources designed to be simple, accessible and useful.
+        </p>
+      </div>
+
+      <div class="features">
+
+        <div class="feature">
+          <div class="icon">✦</div>
+          <h3>Digital Resources</h3>
+          <p>
+            Access useful digital content and resources designed for online use.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">▣</div>
+          <h3>Educational Content</h3>
+          <p>
+            Practical learning material created to make information easier to understand.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">↗</div>
+          <h3>Easy Access</h3>
+          <p>
+            A straightforward digital experience from browsing to accessing your purchase.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="section" id="about">
+
+      <div class="about">
+
+        <h2>About Lokesha Digital Store</h2>
+
+        <p>
+          Lokesha Digital Store is an independent online digital business
+          focused on providing digital resources and educational content.
+          Our goal is to keep the experience simple, clear and convenient
+          for customers.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="cta" id="support">
+
+      <h2>Need help?</h2>
+
       <p>
-        A practical digital resource designed to help readers develop
-        better thinking, learning and personal productivity skills.
+        For questions about a purchase or digital access, please contact
+        our customer support through the appropriate support channel.
       </p>
-      <a class="button" href="https://whop.com/" target="_blank">View Product</a>
+
+      <a href="#home" class="btn btn-primary">
+        Back to Home
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2026 Lokesha Digital Store</div>
+      <div>Digital Products • Educational Resources</div>
     </div>
-
-    <div class="card">
-      <h3>Just Human</h3>
-      <p>
-        A digital book exploring human unity, individuality and the
-        importance of treating people with dignity and respect.
-      </p>
-      <a class="button" href="https://whop.com/" target="_blank">View Product</a>
-    </div>
-
-    <div class="card">
-      <h3>Digital Books & Resources</h3>
-      <p>
-        Explore additional ebooks and educational digital resources
-        available through our online store.
-      </p>
-      <a class="button" href="https://whop.com/" target="_blank">Visit Store</a>
-    </div>
-
-  </div>
-</section>
-
-<section id="about" class="about">
-  <h2 class="section-title">About Lokesha Digital Store</h2>
-  <p>
-    Lokesha Digital Store provides digital ebooks and educational content.
-    Customers purchase products online and receive access to their
-    purchased digital content according to the delivery information
-    provided on the product page.
-  </p>
-</section>
-
-<section id="contact">
-  <h2 class="section-title">Customer Support</h2>
-  <p style="text-align:center;">
-    For questions about products, purchases or digital delivery,
-    please contact our customer support through the store where your
-    purchase was made.
-  </p>
-</section>
-
-<footer>
-  © 2026 Lokesha Digital Store. All rights reserved.
-</footer>
+  </footer>
 
 </body>
 </html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lokesha Digital Store</title>
+  <meta name="description" content="Lokesha Digital Store — digital ebooks and educational content.">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f8fc;
+      color: #171717;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 90px 7%;
+      text-align: center;
+      background: white;
+    }
+
+    .hero h1 {
+      font-size: 46px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #555;
+      font-size: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 14px 25px;
+      background: #111827;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 65px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+      font-size: 30px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #666;
+      font-size: 15px;
+    }
+
+    .about {
+      background: white;
+      text-align: center;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      color: #555;
+    }
+
+    footer {
+      background: #111827;
+      color: #ccc;
+      text-align: center;
+      padding: 30px 7%;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Lokesha Digital Store</div>
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Digital Knowledge. Simple & Accessible.</h1>
+  <p>
+    Welcome to Lokesha Digital Store, a digital marketplace for ebooks,
+    educational resources and downloadable content.
+  </p>
+  <a class="button" href="#products">Explore Products</a>
+</section>
+
+<section id="products">
+  <h2 class="section-title">Our Digital Products</h2>
+
+  <div class="products">
+
+    <div class="card">
+      <h3>Cognitive Toolkit Complete</h3>
+      <p>
+        A practical digital resource designed to help readers develop
+        better thinking, learning and personal productivity skills.
+      </p>
+      <a class="button" href="https://whop.com/" target="_blank">View Product</a>
+    </div>
+
+    <div class="card">
+      <h3>Just Human</h3>
+      <p>
+        A digital book exploring human unity, individuality and the
+        importance of treating people with dignity and respect.
+      </p>
+      <a class="button" href="https://whop.com/" target="_blank">View Product</a>
+    </div>
+
+    <div class="card">
+      <h3>Digital Books & Resources</h3>
+      <p>
+        Explore additional ebooks and educational digital resources
+        available through our online store.
+      </p>
+      <a class="button" href="https://whop.com/" target="_blank">Visit Store</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="about" class="about">
+  <h2 class="section-title">About Lokesha Digital Store</h2>
+  <p>
+    Lokesha Digital Store provides digital ebooks and educational content.
+    Customers purchase products online and receive access to their
+    purchased digital content according to the delivery information
+    provided on the product page.
+  </p>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Customer Support</h2>
+  <p style="text-align:center;">
+    For questions about products, purchases or digital delivery,
+    please contact our customer support through the store where your
+    purchase was made.
+  </p>
+</section>
+
+<footer>
+  © 2026 Lokesha Digital Store. All rights reserved.
+</footer>
+
+</body>
+</html>

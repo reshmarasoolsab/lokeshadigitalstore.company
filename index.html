@@ -269,6 +269,71 @@
       font-size: 14px;
     }
 
+    /* BOOKS */
+
+    .books {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .book-card {
+      background: white;
+      border: 1px solid #e8e9ee;
+      border-radius: 24px;
+      padding: 25px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 35px;
+      align-items: center;
+      box-shadow: 0 15px 45px rgba(0,0,0,.05);
+      transition: .2s;
+    }
+
+    .book-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 55px rgba(0,0,0,.08);
+    }
+
+    .book-cover {
+      width: 100%;
+      max-width: 260px;
+      display: block;
+      margin: auto;
+      border-radius: 14px;
+      box-shadow: 0 15px 35px rgba(0,0,0,.18);
+    }
+
+    .book-info h3 {
+      font-size: 32px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .book-subtitle {
+      color: #635bff;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .book-info p {
+      color: #6b7280;
+      margin-bottom: 22px;
+    }
+
+    .book-tag {
+      display: inline-block;
+      background: #eeecff;
+      color: #574fd6;
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
     .about {
       background: #111827;
       color: white;
@@ -322,6 +387,7 @@
     }
 
     @media (max-width: 800px) {
+
       .nav-links {
         display: none;
       }
@@ -343,6 +409,19 @@
         min-height: 300px;
       }
 
+      .book-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .book-cover {
+        max-width: 280px;
+      }
+
+      .book-info h3 {
+        font-size: 28px;
+      }
+
       .about {
         padding: 40px 25px;
       }
@@ -356,25 +435,38 @@
 
 <body>
 
+  <!-- NAVIGATION -->
+
   <nav class="nav">
     <div class="nav-inner">
-      <div class="logo">Lokesha<span>Digital</span></div>
+
+      <div class="logo">
+        Lokesha<span>Digital</span>
+      </div>
 
       <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#resources">Resources</a>
+        <a href="#books">Books</a>
         <a href="#about">About</a>
         <a href="#support">Support</a>
       </div>
+
     </div>
   </nav>
 
+
   <main>
+
+    <!-- HERO -->
 
     <section class="hero" id="home">
 
       <div>
-        <div class="badge">DIGITAL STORE</div>
+
+        <div class="badge">
+          DIGITAL STORE
+        </div>
 
         <h1>
           Digital resources.<br>
@@ -387,84 +479,251 @@
         </p>
 
         <div class="buttons">
-          <a href="#resources" class="btn btn-primary">
-            Explore Resources
+
+          <a href="#books" class="btn btn-primary">
+            Explore Books
           </a>
 
           <a href="#about" class="btn btn-secondary">
             Learn More
           </a>
+
         </div>
+
       </div>
+
 
       <div class="hero-card">
 
         <div class="hero-card-content">
-          <div class="card-label">LOKESHA DIGITAL STORE</div>
+
+          <div class="card-label">
+            LOKESHA DIGITAL STORE
+          </div>
 
           <h2>
             Learn.<br>
             Create.<br>
             Grow.
           </h2>
+
         </div>
 
         <div class="card-bottom">
-          <div class="mini-card">Digital</div>
-          <div class="mini-card">Educational</div>
-          <div class="mini-card">Online</div>
+
+          <div class="mini-card">
+            Digital
+          </div>
+
+          <div class="mini-card">
+            Educational
+          </div>
+
+          <div class="mini-card">
+            Online
+          </div>
+
         </div>
 
       </div>
 
     </section>
 
+
+    <!-- RESOURCES -->
 
     <section class="section" id="resources">
 
       <div class="section-title">
-        <h2>What we offer</h2>
+
+        <h2>
+          What we offer
+        </h2>
+
         <p>
           Digital resources designed to be simple, accessible and useful.
         </p>
+
       </div>
+
 
       <div class="features">
 
         <div class="feature">
-          <div class="icon">✦</div>
-          <h3>Digital Resources</h3>
+
+          <div class="icon">
+            ✦
+          </div>
+
+          <h3>
+            Digital Resources
+          </h3>
+
           <p>
             Access useful digital content and resources designed for online use.
           </p>
+
         </div>
 
+
         <div class="feature">
-          <div class="icon">▣</div>
-          <h3>Educational Content</h3>
+
+          <div class="icon">
+            ▣
+          </div>
+
+          <h3>
+            Educational Content
+          </h3>
+
           <p>
             Practical learning material created to make information easier to understand.
           </p>
+
         </div>
 
+
         <div class="feature">
-          <div class="icon">↗</div>
-          <h3>Easy Access</h3>
+
+          <div class="icon">
+            ↗
+          </div>
+
+          <h3>
+            Easy Access
+          </h3>
+
           <p>
             A straightforward digital experience from browsing to accessing your purchase.
           </p>
+
         </div>
 
       </div>
 
     </section>
 
+
+    <!-- BOOKS -->
+
+    <section class="section" id="books">
+
+      <div class="section-title">
+
+        <h2>
+          Featured Books
+        </h2>
+
+        <p>
+          Explore original digital books by Lokesha.
+        </p>
+
+      </div>
+
+
+      <div class="books">
+
+
+        <!-- BOOK 1 -->
+
+        <div class="book-card">
+
+          <div>
+
+            <img
+              src="beyond-the-pain.jpg.png"
+              alt="Beyond the Pain book cover"
+              class="book-cover"
+            >
+
+          </div>
+
+
+          <div class="book-info">
+
+            <div class="book-tag">
+              DIGITAL BOOK
+            </div>
+
+            <h3>
+              BEYOND THE PAIN
+            </h3>
+
+            <div class="book-subtitle">
+              One Man’s Journey Through Chronic Illness, Hope & Recovery
+            </div>
+
+            <p>
+              A true life story about one man’s journey through chronic illness,
+              difficult days, treatment, lifestyle changes, mental strength and hope.
+            </p>
+
+            <a href="#support" class="btn btn-primary">
+              Coming Soon
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- BOOK 2 -->
+
+        <div class="book-card">
+
+          <div>
+
+            <img
+              src="the-ai-workflow-guide.jpg"
+              alt="The AI Workflow Guide book cover"
+              class="book-cover"
+            >
+
+          </div>
+
+
+          <div class="book-info">
+
+            <div class="book-tag">
+              AI LEARNING COURSE
+            </div>
+
+            <h3>
+              THE AI WORKFLOW GUIDE
+            </h3>
+
+            <div class="book-subtitle">
+              A Step-by-Step Course to Master Claude AI
+            </div>
+
+            <p>
+              A practical AI learning course covering prompting, research,
+              writing, coding, content, workflows and real-world productivity.
+            </p>
+
+            <a href="#support" class="btn btn-primary">
+              Coming Soon
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
 
     <section class="section" id="about">
 
       <div class="about">
 
-        <h2>About Lokesha Digital Store</h2>
+        <h2>
+          About Lokesha Digital Store
+        </h2>
 
         <p>
           Lokesha Digital Store is an independent online digital business
@@ -478,9 +737,13 @@
     </section>
 
 
+    <!-- SUPPORT -->
+
     <section class="cta" id="support">
 
-      <h2>Need help?</h2>
+      <h2>
+        Need help?
+      </h2>
 
       <p>
         For questions about a purchase or digital access, please contact
@@ -496,11 +759,22 @@
   </main>
 
 
+  <!-- FOOTER -->
+
   <footer>
+
     <div class="footer-inner">
-      <div>© 2026 Lokesha Digital Store</div>
-      <div>Digital Products • Educational Resources</div>
+
+      <div>
+        © 2026 Lokesha Digital Store
+      </div>
+
+      <div>
+        Digital Products • Educational Resources
+      </div>
+
     </div>
+
   </footer>
 
 </body>
